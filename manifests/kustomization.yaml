@@ -7,7 +7,7 @@ helmCharts:
     releaseName: grafana
     repo: https://grafana-community.github.io/helm-charts
   - name: prometheus
-    version: 87.10.1
+    version: 29.14.0
     releaseName: prometheus-community
     repo: https://prometheus-community.github.io/helm-charts
   - name: alertmanager
