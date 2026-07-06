@@ -1,0 +1,31 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: prometheus-internal-tls
+spec:
+  secretName: prometheus-tls-server
+  duration: 2160h
+  renewBefore: 1440h
+  issuerRef:
+    name: monitoring-internal-ca
+    kind: Issuer
+  dnsNames:
+    - prometheus.crcd.pitt.edu
+    - prometheus-community-server
+    - prometheus-community-server.crcd-monitoring
+    - prometheus-community-server.crcd-monitoring.svc
+    - prometheus-community-server.crcd-monitoring.svc.cluster.local
+  ipAddresses:
+    - 127.0.0.1
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: prometheus-public-tls
+spec:
+  secretName: prometheus-public-tls
+  issuerRef:
+    name: sectigo-issuer
+    kind: ClusterIssuer
+  dnsNames:
+    - prometheus.crcd.pitt.edu
