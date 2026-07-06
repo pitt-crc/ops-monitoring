@@ -6,5 +6,11 @@ helmCharts:
     version: 12.7.2
     releaseName: grafana
     repo: https://grafana-community.github.io/helm-charts
-    #valuesFile: values.yaml
-
+  - name: prometheus
+    version: 87.10.1
+    releaseName: prometheus-community
+    repo: https://prometheus-community.github.io/helm-charts
+  - name: alertmanager
+    version: 1.40.2
+    releaseName: alert-manager
+    repo: https://prometheus-community.github.io/helm-charts
