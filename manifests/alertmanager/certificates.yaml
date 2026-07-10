@@ -11,10 +11,10 @@ spec:
     kind: Issuer
   dnsNames:
     - alerts.crcd.pitt.edu
-    - alerts
-    - alerts.crcd-monitoring
-    - alerts.crcd-monitoring.svc
-    - alerts.crcd-monitoring.svc.cluster.local
+    - alertmanager
+    - alertmanager.crcd-monitoring
+    - alertmanager.crcd-monitoring.svc
+    - alertmanager.crcd-monitoring.svc.cluster.local
   ipAddresses:
     - 127.0.0.1
 ---
