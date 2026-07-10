@@ -1,3 +1,11 @@
+configmapReload:
+  prometheus:
+    containerSecurityContext:
+      allowPrivilegeEscalation: false
+      capabilities:
+        drop:
+          - ALL
+
 prometheus-pushgateway:
   securityContext:
     runAsNonRoot: true
