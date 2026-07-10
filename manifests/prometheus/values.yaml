@@ -6,6 +6,9 @@ configmapReload:
         drop:
           - ALL
 
+alertmanager:
+  enabled: false
+
 prometheus-pushgateway:
   securityContext:
     runAsNonRoot: true
@@ -23,6 +26,8 @@ prometheus-pushgateway:
 server:
   service:
     type: LoadBalancer
+  persistentVolume:
+    storageClass: pitt-vcf-vks-storage-policy-latebinding
   securityContext:
     runAsNonRoot: true
     runAsUser: 65534
