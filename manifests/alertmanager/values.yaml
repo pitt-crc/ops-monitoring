@@ -1,0 +1,5 @@
+service:
+  type: LoadBalancer
+
+persistence:
+  storageClass: pitt-vcf-vks-storage-policy-latebinding
