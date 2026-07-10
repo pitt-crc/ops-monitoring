@@ -14,10 +14,7 @@ helmCharts:
     version: 29.14.0
     releaseName: prometheus-community
     repo: https://prometheus-community.github.io/helm-charts
-    valuesInline:
-      server:
-        service:
-          type: LoadBalancer
+    valuesFile: prometheus/values.yaml
 
   - name: alertmanager
     version: 1.40.2
@@ -28,7 +25,7 @@ helmCharts:
         type: LoadBalancer
 
 resources:
-  - ca.yaml
+  - issuers.yaml
   - alertmanager/certificates.yaml
   - grafana/certificates.yaml
   - prometheus/certificates.yaml
