@@ -1,3 +1,17 @@
+alertmanager:
+  persistence:
+    storageClass: pitt-vcf-vks-storage-policy-latebinding
+  podSecurityContext:
+    seccompProfile:
+      type: RuntimeDefault
+  securityContext:
+    allowPrivilegeEscalation: false
+    capabilities:
+      drop:
+        - ALL
+    seccompProfile:
+      type: RuntimeDefault
+
 configmapReload:
   prometheus:
     containerSecurityContext:
@@ -8,8 +22,6 @@ configmapReload:
 
 prometheus-pushgateway:
   securityContext:
-    runAsNonRoot: true
-    runAsUser: 65534
     seccompProfile:
       type: RuntimeDefault
   containerSecurityContext:
@@ -26,8 +38,6 @@ server:
   persistentVolume:
     storageClass: pitt-vcf-vks-storage-policy-latebinding
   securityContext:
-    runAsNonRoot: true
-    runAsUser: 65534
     seccompProfile:
       type: RuntimeDefault
   containerSecurityContext:
