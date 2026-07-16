@@ -6,9 +6,6 @@ configmapReload:
         drop:
           - ALL
 
-alertmanager:
-  enabled: false
-
 prometheus-pushgateway:
   securityContext:
     runAsNonRoot: true
